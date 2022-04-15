@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-offset-1 col-md-10">
+        <h3>Survey List </h3>
+        <a href="/surveys/add" class="btn btn-primary"><i class="fa fa-plus"></i> Add a survey</a>
+        <a href="/user/main/surveys" class="btn btn-primary"><i class="fa fa-plus"></i> survey</a>
+        <br>
+        <div class="table-responsive survey_table">
+          <table class="table table-bordered table-striped table-hover">
+            <thead>
+                <tr>
+                    <th class="text-center">User</th>
+                    <th class="text-center">Title</th>
+                    <th class="text-center">Date</th>
+                    <th class="text-center">Description</th>
+                  
+                
+                    <th class="text-center"></th>
+                    <th class="text-center"></th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let survey of surveys">
+                <td class="text-center">{{survey.User}}</td>
+                <td class="text-center">{{survey.Title}}</td>
+                <td class="text-center">{{survey.Date}}</td>
+                <td class="text-center">{{survey.Description}}</td>
+            
+                <td class="text-center">
+                  <a href="/surveys/add" class="bt btn-primary btn-sm">
+                   Edit</a>
+                </td>
+                <td class="text-center">
+                  <a href="/">
+                    <button type="button" class="btn btn-danger btn-sm" (click)="deleteSurvey(survey._id)">Delete</button>
+                  </a>
+                  <!-- <a href="/" class="bt btn-danger btn-sm">
+                   Delete</a> -->
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+</div>

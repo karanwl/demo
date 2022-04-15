@@ -1,0 +1,16 @@
+.comp_table {
+
+    max-height: 250px;
+
+    overflow-x: auto;
+
+}
+
+.table_background{
+    background: ghostwhite;
+}
+
+input[type="text"], textarea {
+    background-color : ghostwhite; 
+}
+  

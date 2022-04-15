@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-offset-1 col-md-12">
+        <br>
+        <br>
+        <h3>My Survey List </h3><br>
+        <a href="/surveys/add?requestType=add" class="btn btn-primary"><i class="fa fa-plus"></i> Add a Survey</a>
+        <br>
+        <br>
+        <div class="survey_table mysurvey_table">
+          <table  datatable class=" row-border hover table table-bordered  table-hover">
+            <thead>
+                <tr>
+              
+                    <th class="text-center">Title</th>
+                    <th class="text-center">Date</th>
+                    <th class="text-center">Description</th>
+                    <th class="text-center">Question 1</th> 
+                    <th class="text-center">Question 2</th>
+                    <th class="text-center">Question 3</th>    
+                </tr>
+            </thead>
+            <tbody  *ngIf='isLoggedIn()' class="table_background">
+              <tr *ngFor="let survey of surveys">
+                <td *ngIf='isLoggedIn() && survey.User==displayName && survey.Answer_1==undefined' class="text-center">{{survey.Title}}</td>
+                <td *ngIf='isLoggedIn() &&survey.User==displayName && survey.Answer_1==undefined' class="text-center">{{survey.Date}}</td>
+                <td *ngIf='isLoggedIn() &&survey.User==displayName && survey.Answer_1==undefined' class="text-center">{{survey.Description}}</td>
+                <td *ngIf='isLoggedIn() &&survey.User==displayName && survey.Answer_1==undefined' class="text-center">{{survey.Question_1}}</td>
+                <td *ngIf='isLoggedIn() &&survey.User==displayName && survey.Answer_1==undefined' class="text-center">{{survey.Question_2}}</td>
+                <td *ngIf='isLoggedIn() &&survey.User==displayName && survey.Answer_1==undefined' class="text-center">{{survey.Question_3}}</td>
+
+                <td *ngIf='isLoggedIn() &&survey.User==displayName && survey.Answer_1==undefined' class="text-center">
+                  <a >
+                    <button type="button" class="bt btn-primary btn-sm" (click)="editSurvey(survey._id)">
+                   Edit</button>
+                  </a>
+                </td>
+                <td *ngIf='isLoggedIn() &&survey.User==displayName && survey.Answer_1==undefined' class="text-center">
+                  <a href="/">
+                    <button type="button" class="btn btn-danger btn-sm" (click)="deleteSurvey(survey._id)">Delete</button>
+                  </a>
+                </td>
+
+                <td *ngIf='isLoggedIn() &&survey.User==displayName && survey.Answer_1==undefined' class="text-center">
+                  <a href="/survey/result?id={{survey.Title}}">
+                    <button type="button" class="btn btn-primary btn-sm" routerLink="/survey/result?id=survey._id">Results</button>
+                  </a>
+                </td>
+                
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+</div>

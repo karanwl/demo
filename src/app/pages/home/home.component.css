@@ -1,0 +1,20 @@
+.mysurvey_table {
+
+    max-height: 450px;
+    overflow-y: auto;
+    
+
+}
+
+
+.table_background{
+    background: ghostwhite;
+}
+
+input[type="text"], textarea {
+    background-color : ghostwhite; 
+}
+  
+
+
+

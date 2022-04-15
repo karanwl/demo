@@ -1,0 +1,21 @@
+.footer {
+
+    position: fixed;
+
+    bottom: 0;
+
+    width: 100%;
+
+}
+
+
+
+.footerBody{
+
+    color: white;
+
+    font-size: 100%;
+
+    text-align: center;
+
+}
